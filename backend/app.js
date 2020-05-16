@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const {
     getSearchItems,
     getItem,
@@ -9,7 +10,8 @@ const {
 const makeCallback = require('./express-callback');
 const apiRoot = '/api/items';
 
-app.set("PORT", 5000);
+app.set("PORT", process.env.PORT || 5000);
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
