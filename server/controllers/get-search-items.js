@@ -1,4 +1,4 @@
-const makeGetSearchItems = ({ Exception, getMeliSearchItems }) => {
+const makeGetSearchItems = ({ Exception, getMeliSearchItems, transformList }) => {
     return async (httpRequest) => {
         let httpResponse = {
             headers: {
@@ -14,11 +14,7 @@ const makeGetSearchItems = ({ Exception, getMeliSearchItems }) => {
             }
 
             results = await getMeliSearchItems(query);
-
-            httpResponse.body = results;
-            
-            // TODO:
-            // transformItem(results.results);
+            httpResponse.body = transformList(results);
         } catch (e) {
             httpResponse.body = { error: e.message };
             httpResponse.statusCode = e.code;

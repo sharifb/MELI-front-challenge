@@ -5,11 +5,17 @@ const notFound = require('./not-found');
 const {
     getMeliSearchItems,
     getMeliItem,
-    getMeliItemDescription
+    getMeliItemDescription,
+    getMeliCategory
 } = require('../meli-repository');
 
-const getSearchItems = makeGetSearchItems({ Exception, getMeliSearchItems });
-const getItem = makeGetItem({ Exception, getMeliItem, getMeliItemDescription });
+const {
+    transformItem,
+    transformList
+} = require('../transformers');
+
+const getSearchItems = makeGetSearchItems({ Exception, getMeliSearchItems, transformList });
+const getItem = makeGetItem({ Exception, getMeliItem, getMeliItemDescription, getMeliCategory, transformItem });
 
 const controllers = {
     getSearchItems,

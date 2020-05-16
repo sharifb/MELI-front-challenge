@@ -3,7 +3,7 @@ const makeCallback = (controller) => {
         const signature = {
             author: {
                 name: 'Sharif',
-                lastName: 'Baduan'
+                lastname: 'Baduan'
             }
         };
         const httpRequest = {

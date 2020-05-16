@@ -13,12 +13,14 @@ const issueHttpRequest = (uri) => {
         });
 };
 
-const getMeliSearchItems = (query) => issueHttpRequest(`/sites/MLA/search?q=${query}`);
+const getMeliSearchItems = (query) => issueHttpRequest(`/sites/MLA/search?q=${query}&limit=4`);
 const getMeliItem = (id) => issueHttpRequest(`/items/${id}`);
 const getMeliItemDescription = (id) => issueHttpRequest(`/items/${id}/description`);
+const getMeliCategory = (id) => issueHttpRequest(`/categories/${id}`);
 
 module.exports = {
     getMeliSearchItems,
     getMeliItem,
-    getMeliItemDescription
+    getMeliItemDescription,
+    getMeliCategory
 };

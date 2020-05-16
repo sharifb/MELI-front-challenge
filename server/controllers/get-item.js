@@ -1,4 +1,4 @@
-const makeGetItem = ({ Exception, getMeliItem, getMeliItemDescription }) => {
+const makeGetItem = ({ Exception, getMeliItem, getMeliItemDescription, getMeliCategory, transformItem }) => {
     return async (httpRequest) => {
         let httpResponse = {
             headers: {
@@ -13,16 +13,9 @@ const makeGetItem = ({ Exception, getMeliItem, getMeliItemDescription }) => {
                 throw new Exception(400, 'Es necesario enviar un id.');
             }
 
-            item = await getMeliItem(id);
-            itemDescription = await getMeliItemDescription(id);
-
-            httpResponse.body = {
-                ...item,
-                ...itemDescription
-            }
-            
-            // TODO:
-            // transformItem(item.data);
+            const [item, itemDescription] = await Promise.all([getMeliItem(id), getMeliItemDescription(id)]);
+            const categoryData = await getMeliCategory(item.category_id);
+            httpResponse.body = transformItem(item, itemDescription, categoryData);
         } catch (e) {
             httpResponse.body = { error: e.message };
             httpResponse.statusCode = e.code;
