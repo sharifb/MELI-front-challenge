@@ -1,0 +1,52 @@
+.SearchForm {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+    max-width: 1024px;
+    padding: 0px 22px;
+    justify-content: space-between;
+}
+
+.SearchForm form {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: white;
+}
+
+.SearchForm input {
+    box-sizing: border-box;
+    height: 100%;
+    width: calc(100% - 50px);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+}
+
+.SearchForm input::placeholder {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.SearchForm input:focus {
+    outline: none;
+}
+
+.SearchForm button {
+    height: 25px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.SearchForm button img {
+    width: 17px;
+    opacity: 0.6;
+}
