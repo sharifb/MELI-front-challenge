@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
+import Item from './Item/Item';
+import Spinner from '../../UI/Spinner/Spinner';
+import Breadcumbs from '../../UI/Breadcumbs/Breadcumbs';
+import classes from './ItemList.module.css';
 
 const ItemList = (props) => {
 
@@ -35,20 +39,29 @@ const ItemList = (props) => {
         }
     }, [search, searchItems]);
     
-    let itemsList = 'Loading...';
+    let itemsList = <Spinner />;
+    let breadcumbs = null;
 
     if(!isLoading) {
         itemsList = 'No se encontraron resultados';
-        if(items.length) {
-            itemsList = items[0].id;
+
+        if(categories && categories.length) {
+            breadcumbs = <Breadcumbs categories={categories} />
         }
-        if(categories.length) {
-            itemsList += categories[0];
+
+        if(items.length) {
+            itemsList = (<div
+                className={classes.ItemList}>
+                    <ul>
+                        {items.map(i => <li key={i.id}><Item item={i} /></li>)}
+                    </ul>
+                </div>);
         }
     }
 
     return (
         <div>
+            { breadcumbs }
             { itemsList }
         </div>
     )

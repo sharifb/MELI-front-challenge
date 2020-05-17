@@ -1,0 +1,10 @@
+.Breadcumbs {
+    width: (100% - 50px);
+    max-width: 984px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 0 20px;
+    color: grey;
+    font-size: 16px;
+    align-items: left;
+}

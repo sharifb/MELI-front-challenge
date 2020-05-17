@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import classes from './SearchForm.module.css';
 import searchIcon from '../../../assets/images/search-icon.svg';
+import Logo from '../Logo/Logo';
 
 const SearchForm = (props) => {
     
@@ -21,10 +22,13 @@ const SearchForm = (props) => {
 
     const formSubmitHandler = (e) => {
         e.preventDefault();
-        props.history.push(`/items?search=${inputSearch}`);
+        if(inputSearch) {
+            props.history.push(`/items?search=${inputSearch}`);
+        }
     }
     return (
         <div className={classes.SearchForm}>
+            <Logo />
             <form onSubmit={formSubmitHandler}>
                 <input
                     type="text"

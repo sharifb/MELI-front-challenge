@@ -5,13 +5,5 @@
     height: 60px;
     background-color: #FFF159;
     display: flex;
-}
-
-
-@media (min-width: 768px) {
-    .SearchBox {
-        padding-left: 10%;
-        padding-right: 10%;
-        width: 80%;
-    }
+    justify-content: center;
 }
