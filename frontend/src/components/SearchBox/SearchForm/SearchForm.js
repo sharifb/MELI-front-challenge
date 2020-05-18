@@ -49,4 +49,4 @@ const SearchForm = (props) => {
     );
 }
 
-export default withRouter(React.memo(SearchForm));
+export default withRouter(SearchForm);

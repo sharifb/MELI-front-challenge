@@ -1,0 +1,110 @@
+.ItemDescription {
+    width: (100% - 50px);
+    max-width: 984px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: block;
+    background: white;
+}
+
+.ItemDescriptionContainer {
+    width: 100%;
+    display: flex;
+}
+
+.ItemDescriptionImage {
+    width: 70%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.ItemDescriptionBox {
+    padding-top: 20px;
+    width: 30%;
+}
+
+.ItemDescriptionBox ul {
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    width: 100%;
+    list-style: none;
+    display: inline-block;
+}
+
+.ItemDescriptionBox li {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.ItemDescriptionBox li button {
+    height: 38px;
+    background-color: #3483fa;
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    margin-top: 20px;
+    border-radius: 2px;
+}
+
+.ItemDescriptionDescription {
+    width: 70%;
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+
+.ItemDescriptionDescription h1 {
+    font-size: 18px;
+}
+
+.ItemDescriptionDescription p {
+    padding-top: 10px;
+    font-size: 14px;
+    color: grey;
+}
+
+.Condition {
+    color: grey;
+    font-size: 14px;
+}
+
+.Title {
+    font-size: 20px;
+}
+
+.Price {
+    font-size: 26px;
+}
+
+.Price span {
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.Shipping {
+    font-size: 16px;
+    color: green;
+}
+
+@media (max-width: 499px) {
+    .ItemDescriptionImage {
+        width: 100%;
+    }
+    
+    .ItemDescriptionBox {
+        width: 100%;
+    }
+
+    .ItemDescriptionDescription {
+        width: 100%;
+    }
+
+    .ItemDescriptionContainer {
+        display: block;
+    }
+}

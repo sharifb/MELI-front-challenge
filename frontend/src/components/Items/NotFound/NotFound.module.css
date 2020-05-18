@@ -1,0 +1,9 @@
+.NotFound {
+    width: (100% - 50px);
+    max-width: 984px;
+    margin: 20px auto;
+    padding: 0 20px;
+    display: flex;
+    background: white;
+    justify-content: center;
+}

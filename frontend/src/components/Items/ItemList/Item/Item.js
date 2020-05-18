@@ -28,7 +28,7 @@ const Item = (props) => {
                     {getPrice()}
                     { props.item.free_shipping ? <img src={shippingIcon} alt="FreeShipping"></img> : null}
                 </div>
-                <div>{props.item.title}</div>
+                <Link to={link}><div>{props.item.title}</div></Link>
             </div>
         </div>
     )

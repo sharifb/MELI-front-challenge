@@ -5,6 +5,7 @@ import Item from './Item/Item';
 import Spinner from '../../UI/Spinner/Spinner';
 import Breadcumbs from '../../UI/Breadcumbs/Breadcumbs';
 import classes from './ItemList.module.css';
+import NotFound from '../NotFound/NotFound';
 
 const ItemList = (props) => {
 
@@ -17,19 +18,17 @@ const ItemList = (props) => {
 
 
     const searchItems = useCallback(() => {
-        console.log('searching...');
         setIsLoading(true);
         axios.get(`http://localhost:5000/api/items?q=${search}`)
                 .then(res => {
+                    setIsLoading(false);
                     setItems(res.data.items);
                     setCategories(res.data.categories);
-                    setIsLoading(false);
-                    console.log(res.data.items);
                 })
                 .catch(err => {
+                    setIsLoading(false);
                     setItems(null);
                     setCategories(null);
-                    setIsLoading(false);
                 });
     }, [search]);
 
@@ -43,7 +42,7 @@ const ItemList = (props) => {
     let breadcumbs = null;
 
     if(!isLoading) {
-        itemsList = 'No se encontraron resultados';
+        itemsList = <NotFound origin="search" />;
 
         if(categories && categories.length) {
             breadcumbs = <Breadcumbs categories={categories} />
