@@ -10,8 +10,8 @@ import NotFound from '../NotFound/NotFound';
 const ItemList = (props) => {
 
     const [items, setItems] = useState([]);
-    const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [categories, setCategories] = useState([]);
 
     const query = new URLSearchParams(props.location.search);
     const search = query.get('search');

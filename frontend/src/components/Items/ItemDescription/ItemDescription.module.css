@@ -50,6 +50,7 @@
     outline: none;
     margin-top: 20px;
     border-radius: 2px;
+    border: none;
 }
 
 .ItemDescriptionDescription {
@@ -91,7 +92,7 @@
     color: green;
 }
 
-@media (max-width: 499px) {
+@media (max-width: 800px) {
     .ItemDescriptionImage {
         width: 100%;
     }
