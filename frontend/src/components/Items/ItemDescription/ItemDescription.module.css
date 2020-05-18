@@ -96,6 +96,10 @@
     .ItemDescriptionImage {
         width: 100%;
     }
+
+    .ItemDescriptionImage img {
+        width: 100%;
+    }
     
     .ItemDescriptionBox {
         width: 100%;
