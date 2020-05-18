@@ -4,7 +4,7 @@ import Item from './Item';
 import { BrowserRouter } from 'react-router-dom';
 
 describe('Renders item from the list', () => {
-    it('Should render breadcumbs without crashing', () => {
+    it('Should render item without crashing', () => {
         const item = {
             price: {
                 amount: 500,

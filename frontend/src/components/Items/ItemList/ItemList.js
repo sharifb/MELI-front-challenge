@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { withRouter } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../../../axios-orders/back-api';
 import Item from './Item/Item';
 import Spinner from '../../UI/Spinner/Spinner';
 import Breadcumbs from '../../UI/Breadcumbs/Breadcumbs';
@@ -19,7 +19,7 @@ const ItemList = (props) => {
 
     const searchItems = useCallback(() => {
         setIsLoading(true);
-        axios.get(`http://localhost:5000/api/items?q=${search}`)
+        axios.get(`/api/items?q=${search}`)
                 .then(res => {
                     setIsLoading(false);
                     setItems(res.data.items);

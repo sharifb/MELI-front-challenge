@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import Breadcumbs from '../../UI/Breadcumbs/Breadcumbs';
 import Spinner from '../../UI/Spinner/Spinner';
-import axios from 'axios';
+import axios from '../../../axios-orders/back-api';
 import classes from './ItemDescription.module.css';
 import NotFound from '../NotFound/NotFound';
 import { formatAsCurrency } from '../../../utils/helpers';
@@ -17,7 +17,7 @@ const ItemDescription = (props) => {
 
     useEffect(() => {
         setIsLoading(true);
-        axios.get(`http://localhost:5000/api/items/${id}`)
+        axios.get(`/api/items/${id}`)
                 .then(res => {
                     setItem(res.data.item);
                     setCategories(res.data.item.categories);
