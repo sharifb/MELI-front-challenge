@@ -46,6 +46,11 @@
     cursor: pointer;
 }
 
+.SearchForm button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .SearchForm button img {
     width: 17px;
     opacity: 0.6;

@@ -1,20 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import classes from './SearchForm.module.css';
 import searchIcon from '../../../assets/images/search-icon.svg';
 import Logo from '../Logo/Logo';
 
 const SearchForm = (props) => {
-    
+
+    const inputSearchRef = useRef();
+
     const query = new URLSearchParams(props.location.search);
     const search = query.get('search');
-    let initState = '';
 
-    if(search) {
-        initState = search;
-    }
+    let initValue = search || '';
 
-    const [inputSearch, setInputSearch] = useState(initState);
+    const [inputSearch, setInputSearch] = useState('');
+    
+    useEffect(() => {
+        setInputSearch(initValue);
+        inputSearchRef.current.focus();
+    }, [setInputSearch, initValue]);
 
     const inputChangeHandler = (e) => {
         setInputSearch(e.target.value);
@@ -35,6 +39,7 @@ const SearchForm = (props) => {
                     placeholder="Nunca dejes de buscar"
                     onChange={inputChangeHandler}
                     value={inputSearch}
+                    ref={inputSearchRef}
                 />
                 <button>
                     <img src={searchIcon} alt="Search" />
@@ -44,4 +49,4 @@ const SearchForm = (props) => {
     );
 }
 
-export default withRouter(SearchForm);
+export default withRouter(React.memo(SearchForm));

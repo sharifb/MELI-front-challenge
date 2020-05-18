@@ -1,26 +1,41 @@
 .Item {
     width: 100%;
-    height: 220px;
     display: flex;
 }
 
-.Item img {
-    width: 125px;
-    height: 125px;
-    padding: 35px 35px;
+.ItemImage {
+    width: 25%;
 }
 
-.ItemTitle {
+.ItemImage img {
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
-    display: inline-block;
 }
 
-.ItemPrice {
-    width: 100%;
-    display: inline-block;
+.ItemCol {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    width: 75%;
+    font-size: 20px;
 }
 
-.ItemShipping {
-    width: 100%;
-    display: inline-block;
+.ItemCol div {
+    padding: 20px;
+}
+
+@media (max-width: 499px) {
+
+    .Item {
+        display: block;
+    }
+
+    .ItemCol {
+        width: 100%;
+    }
+
+    .ItemImage {
+        width: 100%;
+    }
 }
