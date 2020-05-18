@@ -13,6 +13,7 @@ Test práctico frontend para Mercado Libre
 * "/"
 * "items?search=:query"
 * "items/:id"
+* Utiliza el puerto 3000
 
 #### Instrucciones de instalación y uso
 ###### Una vez clonado el proyecto:
