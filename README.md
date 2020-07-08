@@ -2,7 +2,7 @@
 Test práctico frontend para Mercado Libre
 
 ### Proyecto
-##### El desarrollo cuenta se divide en dos partes:
+##### El desarrollo se divide en dos partes:
 
 ##### Servidor desarrollado en NodeJS y Express, que se comunica con las APIs de Mercado Libre y expone los siguientes endpoints:
 * "/api/items?q=:query"
