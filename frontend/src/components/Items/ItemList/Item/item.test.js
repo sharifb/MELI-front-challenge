@@ -10,11 +10,21 @@ describe('Renders item from the list', () => {
                 amount: 500,
                 currency: 'ARS'
             },
-            picture: 'Image',
-            title: 'Title',
-            id: 'Id',
+            picture: 'https://fakeImageUrl.com/12345',
+            title: 'iPhone XS',
+            id: '12345',
             free_shipping: true
         }
-        render(<BrowserRouter><Item item={item} /></BrowserRouter>);
+
+        const { container, getByText } = render(<BrowserRouter><Item item={item} /></BrowserRouter>);
+        const title = getByText('iPhone XS');
+        const image = container.querySelector('img');
+        const link = container.querySelector('a');
+        const compoundPrice = getByText('$ 500');
+
+        expect(title).toBeInTheDocument();
+        expect(image.getAttribute('src')).toBe('https://fakeImageUrl.com/12345');
+        expect(link.getAttribute('href')).toBe('/items/12345');
+        expect(compoundPrice).toBeInTheDocument();
     });
 });
