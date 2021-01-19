@@ -4,7 +4,7 @@
   "description": "Backend server for MELI front challenge",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js",
+    "start": "nodemon -L ./index.js",
     "test": "jest"
   },
   "author": "Sharif Baduan",

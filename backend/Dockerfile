@@ -1,12 +1,8 @@
 FROM node:12
 
-WORKDIR /usr/src/app
-
-COPY package*.json ./
+WORKDIR /app/backend/
 
 RUN npm install
-
-COPY . .
 
 EXPOSE 5000
 
